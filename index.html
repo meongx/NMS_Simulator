@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Network Simulator</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="poller-setting" style="margin-bottom:10px;">
+		<h4>Poller Setting</h4>
+		<input type="checkbox" id="poller-auto" data-bind="checked: pollerAuto">
+		<label for="poller-auto">Poll otomatis setiap</label>
+		<input type="text" size="1" data-bind="value: pollerTime"> detik
+		&nbsp;&nbsp;--&nbsp;&nbsp;
+		<button id="poll-now" data-bind="disable: pollerAuto">Poll Now</button>
+	</div>
+	<div id="monitor"></div>
+	<footer>
+		Network Simulator by meongx@gmail.com
+	</footer>
+	<div id="form-edit" data-bind="if: selectedNode">
+		<h4>Edit Perangkat <span data-bind="text: selectedNode().id"></span></h4>
+		<input type="checkbox" id="isOn" data-bind="checked: selectedNode().isOn">
+		<label for="isOn">Status Koneksi</label>
+		&nbsp;&nbsp;--&nbsp;&nbsp;
+		Terhubung melalui
+		<select data-bind="value: linkUpdate, options: nodes, optionsText: 'id', optionsValue: 'id', optionsCaption: '[Disconnected]'"></select>
+		&nbsp;&nbsp;--&nbsp;&nbsp;
+		<button data-bind="click: removeNode">Hapus</button>
+		<hr />
+	</div>
+	<div id="form-create">
+		<h4>Input Perangkat Baru</h4>
+		<form action="#">
+			ID Perangkat
+			<input type="text" data-bind="value: newId">
+			Terhubung Melalui
+			<select data-bind="value: newLink, options: nodes, optionsText: 'id', optionsValue: 'id', optionsCaption: '[Disconnected]'"></select>
+			<button data-bind="click: newNode">Input</button>
+		</form>
+	</div>
+	<script src="js/knockout-3.0.0.js"></script>
+	<script src="js/d3.v3.min.js"></script>
+	<script src="js/devices.js"></script>
+	<script src="js/app.js"></script>
+</body>
+</html>

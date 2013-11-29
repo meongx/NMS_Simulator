@@ -1,0 +1,48 @@
+body { font-family: Verdana, Arial, Helvetica, sans-serif }
+h4 {
+	margin-bottom: 10px;
+}
+h4 span {
+	color: #1F77B4;
+}
+#node-Sentral {
+	stroke-width: 5px;
+	stroke: black;
+	/* stroke: #FF7F0E;
+	fill: #FF7F0E; */
+}
+#node-Sentral:hover, #node-Sentral.selected {
+	fill: #1F77B4;
+	stroke: #1F77B4;
+}
+svg {
+	border: 1px solid;
+}
+svg line {
+	stroke: #ccc;
+	stroke-width: 1px;
+}
+
+svg circle:hover, svg .selected {
+	fill: #1F77B4 !important;
+}
+
+svg circle.up {
+	fill: #2CA02C;
+	stroke: #2CA02C;
+}
+
+svg circle {
+	fill: #D62728;
+	stroke: #D62728;
+}
+
+svg line.up {
+	stroke: #ccc;
+}
+
+footer {
+	font-size: 10px;
+	text-align: right;
+	margin-top: 5px;
+}
